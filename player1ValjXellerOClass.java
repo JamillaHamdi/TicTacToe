@@ -7,13 +7,18 @@ public class player1ValjXellerOClass {
 
         System.out.println("Spelare 1, Välj O eller X");
         String player1Val = scanner.next();
+
         if (player1Val.equalsIgnoreCase("x")) {
 
-            System.out.println("Okej, spelare 1 är X och spelare 2 är O ");
+            String player2 = "O";
+            System.out.println("Okej, spelare 1 är " 
+            + player1Val + " och spelare 2 är " + player2);
 
         } else if (player1Val.equalsIgnoreCase("o")) {
 
-            System.out.println("Okej, spelare 1 är O och spelare 2 är X ");
+            String player2 = "X";
+            System.out.println("Okej, spelare 1 är "
+            + player1Val + " och spelare 2 är " + player2);
 
         } else {
 
