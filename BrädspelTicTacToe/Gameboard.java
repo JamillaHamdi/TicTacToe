@@ -1,5 +1,6 @@
 package BrädspelTicTacToe;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Gameboard {
 
@@ -171,7 +172,7 @@ public class Gameboard {
                 boolean validChoice = false;
 
                 while (!validChoice) {
-                    String input = scan.nextLine().trim().toUpperCase();
+                    String input = scan.nextLine().toUpperCase();
 
                     if (input.equals("X") || input.equals("O")) {
                         playerSymbol = input.charAt(0);
@@ -181,6 +182,7 @@ public class Gameboard {
                         System.out.println("Invalid choice. Please enter 'X' or 'O'.");
                     }
                 } return playerSymbol;
+
             }
         }
     
