@@ -1,8 +1,14 @@
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //Spelare 1 väljer
-        player1ValjXellerOClass.player1ValjXellerOMetod(args);
+
+
+         player1ValjXellerOClass.player1ValjXellerOMetod(args);
+
+
+         
+        
 
     }
 

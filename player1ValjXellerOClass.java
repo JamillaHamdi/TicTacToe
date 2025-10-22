@@ -1,29 +1,41 @@
 import java.util.Scanner;
-
+import java.lang.Thread;
 
 public class player1ValjXellerOClass {
     public static Scanner scanner = new Scanner(System.in);
-    public static void player1ValjXellerOMetod(String[] args) {
+    public static void player1ValjXellerOMetod(String[] args) throws InterruptedException {
 
         System.out.println("Spelare 1, Välj O eller X");
+        System.out.println(" ");
         String player1Val = scanner.next();
 
         if (player1Val.equalsIgnoreCase("x")) {
 
+            Thread.sleep(1000);
+            String player1 = "X";
             String player2 = "O";
+            System.out.println(" ");
             System.out.println("Okej, spelare 1 är " 
-            + player1Val + " och spelare 2 är " + player2);
+            + player1 + " och spelare 2 är " + player2);
 
         } else if (player1Val.equalsIgnoreCase("o")) {
 
+            Thread.sleep(1000);
+            String player1 = "O";
             String player2 = "X";
+            System.out.println(" ");
             System.out.println("Okej, spelare 1 är "
-            + player1Val + " och spelare 2 är " + player2);
+            + player1 + " och spelare 2 är " + player2);
 
         } else {
 
             System.out.println("Mannen välj rätt");
-            player1ValjXellerOClass.player1ValjXellerOMetod(args);
+            Thread.sleep(1000);
+            System.out.println("Startar om...");
+            System.out.println(" ");
+
+            Thread.sleep(2000);
+            player1ValjXellerOMetod(args);
         }
 
         
