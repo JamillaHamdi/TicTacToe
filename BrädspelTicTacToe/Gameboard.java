@@ -25,7 +25,7 @@ public class Gameboard {
         char player = choosePlayerSymbol(scan);
         char opponent;
 
-        if (player == 'X') {
+        if (player == 'X') 
             opponent = 'O';
         } 
         else {
