@@ -18,7 +18,7 @@ public class player1ValjXellerOClass {
         } else {
 
             System.out.println("Mannen välj rätt");
-            Main.main(args);
+            player1ValjXellerOClass.player1ValjXellerOMetod(args);
         }
 
         
