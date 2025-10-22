@@ -21,10 +21,10 @@ public class Gameboard {
         System.out.println("Choose 'X' or 'O'");
         
         
-        char Player = choosePlayerSymbol(scan);
+        char player = choosePlayerSymbol(scan);
         char opponent;
 
-        if (Player == 'X') {
+        if (player == 'X') {
             opponent = 'O';
         } 
         else {
@@ -40,10 +40,10 @@ public class Gameboard {
             int col = scan.nextInt() - 1;
 
             if (isValidMove(row, col)) {
-                board[row][col] = Player;
+                board[row][col] = player;
                 printBoard();
 
-                if (checkWin(Player)) {
+                if (checkWin(player)) {
                     System.out.println("You win!");
                     
                 } else if (isBoardFull()) {
@@ -55,7 +55,7 @@ public class Gameboard {
 
                 // AI move
                 System.out.println("AI's move:");
-                makeAIMove();
+                //makeAIMove();
                 printBoard();
 
                 if (checkWin(opponent)) {
@@ -128,7 +128,7 @@ public class Gameboard {
 
 
 
-    static void makeAIMove() {
+    /*  static void makeAIMove() {
         // Try to win
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -144,8 +144,8 @@ public class Gameboard {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {
-                    board[i][j] = Player;
-                    if (checkWin(Player)) {
+                    board[i][j] = player;
+                    if (checkWin(player)) {
                         board[i][j] = AI; // Block
                         return;
                     }
@@ -158,16 +158,15 @@ public class Gameboard {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {
-                    board[i][j] = AI;
+                    board[i][j] = opponent;
                     return;
                 }
             }
             
         }
         
-    }
-
-    public static char choosePlayerSymbol(Scanner scan) {
+    }*/
+     public static char choosePlayerSymbol(Scanner scan) {
                 char playerSymbol = ' ';
                 boolean validChoice = false;
 
@@ -182,5 +181,9 @@ public class Gameboard {
                         System.out.println("Invalid choice. Please enter 'X' or 'O'.");
                     }
                 } return playerSymbol;
-            } 
-}
+            }
+        }
+    
+
+    
+            
