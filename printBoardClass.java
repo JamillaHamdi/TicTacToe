@@ -9,7 +9,7 @@ public class printBoardClass {
     };
 
     public static void printBoardMetod(String[] args) throws InterruptedException{
-        System.out.println("-------------");
+        System.out.println("_________");
         Thread.sleep(400);
 
         for (int i = 0; i < 3; i++) {
