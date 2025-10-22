@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "TicTacToe_f51a2b12"
+        },
+        {
+            "type": "java",
+            "name": "Gameboard",
+            "request": "launch",
+            "mainClass": "Gameboard",
+            "projectName": "TicTacToe_f51a2b12"
+        },
+        {
+            "type": "java",
+            "name": "Run",
+            "request": "launch",
+            "mainClass": "${file}",
+            "projectName": "Run"
+        }
+    ]
+}
