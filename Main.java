@@ -4,7 +4,6 @@ public class Main {
         //Spelare 1 väljer
 
         player1ValjXellerOClass.player1ValjXellerOMetod(args);
-        //printBoardClass.printBoardMetod(args);
 
 
          
