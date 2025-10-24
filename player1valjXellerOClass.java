@@ -5,7 +5,7 @@ public class player1valjXellerOClass {
     public static Scanner scanner = new Scanner(System.in);
     public static void player1ValjXellerOMetod(String[] args) throws InterruptedException {
 
-        System.out.println("Spelare 1, Välj O eller X");
+        System.out.println("Spelare 1, Välj O eller X ");
         System.out.println(" ");
         String player1Val = scanner.next();
 
