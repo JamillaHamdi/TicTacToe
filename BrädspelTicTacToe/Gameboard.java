@@ -1,88 +1,61 @@
 package BrädspelTicTacToe;
-import java.util.Scanner;
-import java.util.Random;
-
-public class Gameboard {
+public class GameBoard {
+import java.util.Scanner;    
 
     static char[][] board = {
         {' ', ' ', ' '},
         {' ', ' ', ' '},
         {' ', ' ', ' '}
     };
-    
-    
-    //static final char PLAYER = 'X';
-    //static final char AI = 'O';
+
+    static final char PLAYER = 'X';
+    static final char AI = 'O';
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean gameEnded = false;
 
         System.out.println("Welcome to Tic Tac Toe (You = X, AI = O)");
-        System.out.println("Choose 'X' or 'O'");
-        
-        
-        char player = choosePlayerSymbol(scan);
-        char opponent;
-
-        if (player == 'X') 
-            opponent = 'O';
-        } 
-        else {
-            opponent = 'X';
-        }
-
         printBoard();
 
         while (!gameEnded) {
             // Player move
             System.out.println("Your move (row[1-3] and column[1-3]): ");
-            int row = scan.nextInt() - 1;
-            int col = scan.nextInt() - 1;
+            int row = scanner.nextInt() - 1;
+            int col = scanner.nextInt() - 1;
 
             if (isValidMove(row, col)) {
-                board[row][col] = player;
+                board[row][col] = PLAYER;
                 printBoard();
 
-                if (checkWin(player)) {
+                if (checkWin(PLAYER)) {
                     System.out.println("You win!");
-                    
+                    break;
                 } else if (isBoardFull()) {
                     System.out.println("It's a draw!");
-                    
+                    break;
                 }
-
-                
 
                 // AI move
                 System.out.println("AI's move:");
-                //makeAIMove();
+                makeAIMove();
                 printBoard();
 
-                if (checkWin(opponent)) {
+                if (checkWin(AI)) {
                     System.out.println("AI wins!");
-                    
+                    break;
                 } else if (isBoardFull()) {
                     System.out.println("It's a draw!");
-                    
+                    break;
                 }
 
             } else {
                 System.out.println("Invalid move. Try again.");
             }
-
-           
-
         }
-        
-        
-        
 
-        scan.close();
+        scanner.close();
     }
-    
-        
-    
 
     static void printBoard() {
         System.out.println("-------------");
@@ -124,18 +97,13 @@ public class Gameboard {
                (board[0][2] == player && board[1][1] == player && board[2][0] == player);
     }
 
-
-
-
-
-
-    /*  static void makeAIMove() {
+    static void makeAIMove() {
         // Try to win
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {
-                    board[i][j] = opponent;
-                    if (checkWin(opponent)) return;
+                    board[i][j] = AI;
+                    if (checkWin(AI)) return;
                     board[i][j] = ' '; // Undo
                 }
             }
@@ -145,8 +113,8 @@ public class Gameboard {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {
-                    board[i][j] = player;
-                    if (checkWin(player)) {
+                    board[i][j] = PLAYER;
+                    if (checkWin(PLAYER)) {
                         board[i][j] = AI; // Block
                         return;
                     }
@@ -159,32 +127,13 @@ public class Gameboard {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (board[i][j] == ' ') {
-                    board[i][j] = opponent;
+                    board[i][j] = AI;
                     return;
                 }
             }
-            
         }
-        
-    }*/
-     public static char choosePlayerSymbol(Scanner scan) {
-                char playerSymbol = ' ';
-                boolean validChoice = false;
+    }
 
-                while (!validChoice) {
-                    String input = scan.nextLine().toUpperCase();
-
-                    if (input.equals("X") || input.equals("O")) {
-                        playerSymbol = input.charAt(0);
-                        validChoice = true;
-                    }
-                    else {
-                        System.out.println("Invalid choice. Please enter 'X' or 'O'.");
-                    }
-                } return playerSymbol;
-
-            }
-        }
     
 
     
