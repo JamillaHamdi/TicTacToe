@@ -30,7 +30,7 @@ public class player1valjXellerOClass {
 
         } else if (player1Val.equalsIgnoreCase("o")) {
 
-            System.out.println("Vi börjar spelet!");
+            System.out.println("Sparar valet...");
             Thread.sleep(1000);
 
             String player1 = "O";
