@@ -18,11 +18,17 @@ public class player1valjXellerOClass {
             String player2 = "O";
             
             System.out.println(" ");
-            System.out.println("Okej, spelare 1 är " 
-            + player1 + " och spelare 2 är " + player2);
+            System.out.println("Spelare 1: " 
+            + player1 + " , spelare 2:" + player2);
             Thread.sleep(1000);
 
-            System.out.println("Vi börjar spelet!");
+            System.out.println("Spelet börjar om...");
+            Thread.sleep(1000);
+            System.out.println("3");
+            Thread.sleep(1000);
+            System.out.println("2");
+            Thread.sleep(1000);
+            System.out.println("1");
             Thread.sleep(1000);
 
             printBoardClass.printBoardMetod(args);
@@ -37,11 +43,17 @@ public class player1valjXellerOClass {
             String player2 = "X";
 
             System.out.println(" ");
-            System.out.println("Okej, spelare 1 är "
-            + player1 + " och spelare 2 är " + player2);
+            System.out.println("Spelare 1: "
+            + player1 + ", spelare 2: " + player2);
             Thread.sleep(1000);
 
-            System.out.println("Vi börjar spelet!");
+            System.out.println("Spelet börjar om...");
+            Thread.sleep(1000);
+            System.out.println("3");
+            Thread.sleep(1000);
+            System.out.println("2");
+            Thread.sleep(1000);
+            System.out.println("1");
             Thread.sleep(1000);
 
             printBoardClass.printBoardMetod(args);
