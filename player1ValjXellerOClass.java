@@ -1,26 +1,70 @@
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class player1ValjXellerOClass {
+public class player1valjXellerOClass {
     public static Scanner scanner = new Scanner(System.in);
     public static void player1ValjXellerOMetod(String[] args) throws InterruptedException {
 
-        String player2 = "place holder";
-        System.out.println("[X/O]?");
+        System.out.println("Spelare 1, Välj O eller X ");
         System.out.println(" ");
-        String player1Val = scanner.next().toUpperCase();
-        
+        String player1Val = scanner.next();
 
-        if (player1Val.equals("X")) { 
-            player2 = "O";}
+        if (player1Val.equalsIgnoreCase("x")) {
 
-        else if( player1Val.equals("O")){
-            player2 = "X";}
-        else {
+            System.out.println("Sparar valet...");
+            Thread.sleep(1000);
+
+            String player1 = "X";
+            String player2 = "O";
+            
+            System.out.println(" ");
+            System.out.println("Spelare 1: " 
+            + player1 + " , spelare 2:" + player2);
+            Thread.sleep(1000);
+
+            System.out.println("Spelet börjar om...");
+            Thread.sleep(1000);
+            System.out.println("3");
+            Thread.sleep(1000);
+            System.out.println("2");
+            Thread.sleep(1000);
+            System.out.println("1");
+            Thread.sleep(1000);
+
+
+            printBoardClass.printBoardMetod(args);
+
+
+        } else if (player1Val.equalsIgnoreCase("o")) {
+
+            System.out.println("Sparar valet...");
+            Thread.sleep(1000);
+
+            String player1 = "O";
+            String player2 = "X";
+
+            System.out.println(" ");
+            System.out.println("Spelare 1: "
+            + player1 + ", spelare 2: " + player2);
+            Thread.sleep(1000);
+
+            System.out.println("Spelet börjar om...");
+            Thread.sleep(1000);
+            System.out.println("3");
+            Thread.sleep(1000);
+            System.out.println("2");
+            Thread.sleep(1000);
+            System.out.println("1");
+            Thread.sleep(1000);
+
+            printBoardClass.printBoardMetod(args);
+
+
+        } else {
 
             System.out.println("Mannen välj rätt");
             Thread.sleep(1000);
-            
+
             System.out.println("Startar om...");
             System.out.println(" ");
 
@@ -28,26 +72,8 @@ public class player1ValjXellerOClass {
             player1ValjXellerOMetod(args);
         }
 
-            System.out.println("Sparar valet...");
-            Thread.sleep(1000);
-
-            
-            
-            System.out.println(" ");
-            System.out.println("Spelare 1 :" 
-            + player1Val + " Spelare 2 :" + player2);
-            Thread.sleep(1000);
-
-            System.out.println("Spelet startar");
-            Thread.sleep(1000);
-
-            printBoardClass.printBoardMetod(args);
-
-
-        }
-
         
 
 
     }
-
+}
