@@ -2,26 +2,27 @@ import java.lang.Thread;
 
 public class printBoardClass {
 
-    static char[][] board = {
-        {' ', ' ', ' '},
-        {' ', ' ', ' '},
-        {' ', ' ', ' '}
-    };
+    static String board = "_____________" + "\n" +
+    "| 1 |" + " 2 |" + " 3 |" + "\n" +
+    "-------------" + "\n" +
+    "| 4 |" + " 5 |" + " 6 |" + "\n" +
+    "-------------" + "\n" +
+    "| 7 |" + " 8 |" + " 9 |" + "\n" +
+    "-------------" + "\n";
+        
+    
 
     public static void printBoardMetod(String[] args) throws InterruptedException{
-        System.out.println("_________");
-        Thread.sleep(400); 
 
-        for (int i = 0; i < 3; i++) {
-            System.out.print("| ");
-            Thread.sleep(400);
-            for (int j = 0; j < 3; j++) {
-                System.out.print(board[i][j] + " | ");
-                Thread.sleep(400);
-            }
-            System.out.println("\n-------------");
+        for (int b = 0; b < board.length(); b++) {
             
+            char character = board.charAt(b);
+
+            System.out.print(character);
+            Thread.sleep(50);
         }
+
+       
     }
     
 }
