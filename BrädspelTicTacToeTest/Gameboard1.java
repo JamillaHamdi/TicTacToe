@@ -1,4 +1,4 @@
-package BrädspelTicTacToe;
+package BrädspelTicTacToeTest;
 
 public class Gameboard1 {
     static char[][] board = {

@@ -1,4 +1,4 @@
-package BrädspelTicTacToe;
+package BrädspelTicTacToeTest;
 public class GameBoard {
 import java.util.Scanner;    
 

@@ -1,4 +1,4 @@
-package BrädspelTicTacToe;
+package BrädspelTicTacToeTest;
 import java.util.Random;
 import java.util.Scanner;
 
