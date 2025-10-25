@@ -28,6 +28,8 @@ public class Test {
             System.out.println("Välj rätt");
         }
         System.out.println(spelare1 + spelare2);
+
     }
+
     
 }

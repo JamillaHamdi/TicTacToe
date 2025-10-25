@@ -29,6 +29,8 @@ public class Test2 {
         placePiece(gameBoard,cpuPos, "cpu ");
 
         printGameBoard(gameBoard);
+
+        
         }
     }
 
@@ -42,6 +44,9 @@ public static void placePiece(char [][] gameBoard, int pos, String user) {
     else if(user.equals("cpu")) {
         symbol = 'O';
     }
+
+
+
 
      switch(pos) {
                 case 1: gameBoard [0][0] = symbol;
@@ -75,6 +80,8 @@ public static void placePiece(char [][] gameBoard, int pos, String user) {
             }
             System.out.println();
         }
+
     }
+    
 
 }
