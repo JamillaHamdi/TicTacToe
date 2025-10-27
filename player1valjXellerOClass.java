@@ -20,7 +20,7 @@ public class player1valjXellerOClass {
             System.out.println(" ");
             System.out.println("Spelare 1: " 
             + player1 + " , spelare 2:" + player2);
-            Thread.sleep(1000);
+            Thread.sleep(1000); 
 
             System.out.println("Spelet börjar om...");
             Thread.sleep(1000);
