@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class player1valjXellerOClass {
+public class player1ValjXellerOClass {
     public static Scanner scanner = new Scanner(System.in);
     public static void player1ValjXellerOMetod(String[] args) throws InterruptedException {
 
