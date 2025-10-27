@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Thread;
 
-public class player1ValjXellerOClass {
+public class player1valjXellerOClass {
     public static Scanner scanner = new Scanner(System.in);
     public static void player1ValjXellerOMetod(String[] args) throws InterruptedException {
 
@@ -20,7 +20,7 @@ public class player1ValjXellerOClass {
             System.out.println(" ");
             System.out.println("Spelare 1: " 
             + player1 + " , spelare 2:" + player2);
-            Thread.sleep(1000);
+            Thread.sleep(1000); 
 
             System.out.println("Spelet börjar om...");
             Thread.sleep(1000);

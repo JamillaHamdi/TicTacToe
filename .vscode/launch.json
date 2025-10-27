@@ -5,20 +5,6 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "TicTacToe_49df17a0"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "TicTacToe_f51a2b12"
-        },
-        {
-            "type": "java",
-            "name": "Gameboard",
-            "request": "launch",
-            "mainClass": "Gameboard",
             "projectName": "TicTacToe_f51a2b12"
         },
         {
