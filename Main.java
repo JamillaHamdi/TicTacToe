@@ -1,16 +1,9 @@
 import java.util.*;;
 
 public class Main {
-
     public static void main(String[] args) throws InterruptedException {
-        //Spelare 1 väljer
-
-        player1ValjXellerOClass.player1ValjXellerOMetod(args);
-
-
-         
-        
-
+        player1valjXellerOClass.player1ValjXellerOMetod(args);
+        printBoardClass.printBoardMetod(args);
     }
 
 }
