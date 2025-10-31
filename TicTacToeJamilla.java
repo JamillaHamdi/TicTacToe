@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,13 +23,23 @@ public class TicTacToeJamilla {
       System.out.println("1: Spela mot datorn");
       System.out.println("2: Spela med kompis");
 
-      antal = s.nextInt();
+      
 
       while (antal != 1 && antal !=2){
-         System.out.println("Du måste välja 1 eller 2. Försök igen:");
-         s.hasNextInt();
-         antal = s.nextInt();
+         //s.hasNextInt();
+         try {
+            antal = s.nextInt();
+            if (antal != 1 && antal !=2){
+               System.out.println("Du måste välja 1 eller 2. Försök igen:");
+            }
+         }
+         catch(InputMismatchException e){
+            System.out.println("Du måste välja 1 eller 2. Försök igen:");
+            //s.reset();
+            s.next();
+         }
       }
+
       spelaresVal();
       boolean spelaIgen = true;
       while(spelaIgen){
@@ -41,18 +52,23 @@ public class TicTacToeJamilla {
          System.out.println("Vill du spela igen?");
          System.out.println("1: Ja");
          System.out.println("2: Nej");
-         s.hasNextInt();
-         int igen = s.nextInt();
-         if (igen == 2){
-            spelaIgen = false;
-         }
+         int igen = 0;
 
          while (igen != 1 && igen != 2){
-            System.out.println("Du måste välja 1 eller 2. Försök igen:");
-            s.hasNextInt();
-            igen = s.nextInt();
+            //s.hasNextInt();
+            try {
+               igen = s.nextInt();
+               if (igen != 1 && igen!= 2){
+                  System.out.println("Du måste välja 1 eller 2. Försök igen:");
+               }
+            }
+            catch (InputMismatchException e){
+               System.out.println("Du måste välja 1 eller 2. Försök igen:");
+               s.next();
+            }   
          }
-
+         if (igen == 2){
+               spelaIgen = false;}
       }
       System.out.println(ett.getNamn() + " vann " + ett.getVinst() + " gånger");
       System.out.println(two.getNamn() + " vann " + two.getVinst() + " gånger");
@@ -61,25 +77,33 @@ public class TicTacToeJamilla {
     }
 
 static Spelare[] spelaresVal() {
-   System.out.println("Okej! Spelare 1, vad heter du och vill du vara x eler o?");
-   System.out.println("Namn:");
-   s.hasNext();
-   String namnEtt = s.next();
-   System.out.println("x/o:");
-   s.hasNext();
-   String valEtt = s.next().toLowerCase();
+
+   String namnEtt = null;
    String namnTwo = null;
+   String valEtt = null;
    String valTwo = null; 
+   boolean right = true;
    
-   if (valEtt.equalsIgnoreCase("x")){
-      valTwo = "o";
-   }
-   else if (valEtt.equalsIgnoreCase("o")){
-      valTwo = "x";
-   }
-   else {
-     System.out.println("Mannen välj rätt");
-      spelaresVal();
+   while (right) {
+      System.out.println("Okej! Spelare 1, vad heter du och vill du vara x eler o?");
+      System.out.println("Namn:");
+      s.hasNext();
+      namnEtt = s.next();
+      System.out.println("x/o:");
+      s.hasNext();
+      valEtt = s.next().toLowerCase();
+      
+      if (valEtt.equalsIgnoreCase("x")){
+         valTwo = "o";
+         right = false;
+      }
+      else if (valEtt.equalsIgnoreCase("o")){
+         valTwo = "x";
+         right = false;
+      }
+      else {
+      System.out.println("Mannen välj rätt");
+      }
    }
    
    
@@ -166,10 +190,21 @@ static String[][] spelaSpel() {
          vad = two.getVal();
          System.out.println("Din tur " + name + ":");
       }
-      
-      row = s.nextInt() - 1;
-      col = s.nextInt() - 1;
-      
+      boolean fel = true;
+      while (fel){
+         try {
+            row = s.nextInt() - 1;
+            col = s.nextInt() - 1;
+            fel = false;
+         }
+         catch (InputMismatchException e){
+            System.out.println("Du kan bara välja siffror 1-3. Försök igen:");
+            s.next();
+         }
+         /*if (row >= 0 && row < 3 && col >= 0 && col < 3){
+            fel = false;
+         }*/
+      }
       
       if (isValidMove(row, col)) {
          board[row][col] = vad;
@@ -239,12 +274,23 @@ static String[][] spelaMotDatorn(){
       
 
       while (vemsTur == 0) {
+         boolean fel = true;
+         while (fel){
+            try {
+               System.out.println(name + "s tur: ");
+               s.hasNextInt();
+               row = s.nextInt() - 1;
+               s.hasNextInt();
+               col = s.nextInt() - 1;
+               fel = false;
+            }
+            catch (InputMismatchException e){
+               System.out.println("Du kan bara välja siffror 1-3. Försök igen:");
+               s.next();
+            }
+         }
 
-         System.out.println(name + "s tur: ");
-         s.hasNextInt();
-         row = s.nextInt() - 1;
-         s.hasNextInt();
-         col = s.nextInt() - 1;
+         
       
          if (isValidMove(row, col)) {
             board[row][col] = vad;
