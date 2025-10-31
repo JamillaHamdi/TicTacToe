@@ -10,7 +10,6 @@ public class TicTacToeJamilla {
     };
     static boolean gameEnded = false;
     static int antal;
-    //static String spelare[] = new String[2];
     static Scanner s = new Scanner(System.in);
     static int row;
     static int col;
@@ -19,44 +18,63 @@ public class TicTacToeJamilla {
 
     public static void main(String[] args) {
 
-      //Scanner s = new Scanner(System.in);
       System.out.println("Välkommen till Tre i rad! Vill du spela med en kompis eller mot datorn?");
       System.out.println("1: Spela mot datorn");
       System.out.println("2: Spela med kompis");
 
       antal = s.nextInt();
 
-      if (antal != 1 && antal !=2){
+      while (antal != 1 && antal !=2){
          System.out.println("Du måste välja 1 eller 2. Försök igen:");
          s.hasNextInt();
          antal = s.nextInt();
-         
       }
-      //s.close();
+      spelaresVal();
+      boolean spelaIgen = true;
+      while(spelaIgen){
+         if (antal == 1){
+            spelaMotDatorn();
+         }
+         else if(antal ==2){
+            spelaSpel();
+         }
+         System.out.println("Vill du spela igen?");
+         System.out.println("1: Ja");
+         System.out.println("2: Nej");
+         s.hasNextInt();
+         int igen = s.nextInt();
+         if (igen == 2){
+            spelaIgen = false;
+         }
 
-      
-      //spelaresVal();
+         while (igen != 1 && igen != 2){
+            System.out.println("Du måste välja 1 eller 2. Försök igen:");
+            s.hasNextInt();
+            igen = s.nextInt();
+         }
 
-      //System.out.println(ett.getNamn() + two.getNamn() + ett.getVal() + two.getVal());
-      //printBoard();
-      spelaSpel();
-      //spelaMotDatorn();
+      }
+      System.out.println(ett.getNamn() + " vann " + ett.getVinst() + " gånger");
+      System.out.println(two.getNamn() + " vann " + two.getVinst() + " gånger");
       s.close();
 
     }
 
 static Spelare[] spelaresVal() {
    System.out.println("Okej! Spelare 1, vad heter du och vill du vara x eler o?");
-   System.out.println("Val:");
+   System.out.println("Namn:");
    s.hasNext();
-   String valEtt = s.next();
+   String namnEtt = s.next();
+   System.out.println("x/o:");
+   s.hasNext();
+   String valEtt = s.next().toLowerCase();
    String namnTwo = null;
    String valTwo = null; 
    
-   if (valEtt.equals("x")){
+   if (valEtt.equalsIgnoreCase("x")){
       valTwo = "o";
    }
-   else if (valEtt.equals("o")){
+   else if (valEtt.equalsIgnoreCase("o")){
       valTwo = "x";
    }
    else {
@@ -64,9 +82,6 @@ static Spelare[] spelaresVal() {
       spelaresVal();
    }
    
-   System.out.println("Namn:");
-   s.hasNext();
-   String namnEtt = s.next();
    
    if (antal == 2){
       System.out.println("Spelare 2, vad heter du?");
@@ -81,6 +96,8 @@ static Spelare[] spelaresVal() {
    ett.setVal(valEtt);
    two.setNamn(namnTwo);
    two.setVal(valTwo);
+   ett.addVinst(0);
+   two.addVinst(0);
    
    System.out.println(ett.getNamn() + " valde " + ett.getVal() + ". " + two.getNamn() + " blir då " + two.getVal());
 
@@ -108,8 +125,20 @@ static String[][] printBoard() {
         return board;
 }
 
+static String[][] clearBoard(){
+   for (int i = 0; i < 3; i++){
+      for (int j = 0; j < 3; j++){
+         board[i][j]= " ";
+      }
+   }
+   return board;
+
+}
+
 static String[][] spelaSpel() {
-   spelaresVal();
+
+   clearBoard();
+   //spelaresVal();
 
    System.out.println("Nu spelar vi! Välj först rad och sedan kolumn:");
    
@@ -120,20 +149,24 @@ static String[][] spelaSpel() {
    int vemsTur = rand.nextInt(2);
    System.out.println(vemsTur);
    String vad = null;
+   String name = null;
 
 
    while (!gameEnded){
 
       if (vemsTur == 0){
 
-        // System.out.println("Din tur spelare 1!");
+        name = ett.getNamn();
+        System.out.println("Din tur " + name + ":");
         vad = ett.getVal();
 
       }
       else if (vemsTur == 1) {
+         name = two.getNamn();
          vad = two.getVal();
+         System.out.println("Din tur " + name + ":");
       }
-      System.out.println("Your move (row[1-3] and column[1-3]): ");
+      
       row = s.nextInt() - 1;
       col = s.nextInt() - 1;
       
@@ -150,16 +183,22 @@ static String[][] spelaSpel() {
          }
          
          if (checkWin(vad)) {
-            System.out.println("You win!");
+            System.out.println(name + " vann!");
+            if (vad.equals(ett.getVal())){
+               ett.addVinst(ett.getVinst() + 1);
+            }
+            else if (vad.equals(two.getVal())){
+               two.addVinst(two.getVinst() + 1);
+            }
             break;
          } else if (isBoardFull(vad)) {
-            System.out.println("It's a draw!");
+            System.out.println("Det blev lika");
             break;
          }
       }
       
       else {
-         System.out.println("Invalid move. Try again.");
+         System.out.println("Otillåtet drag. Försök igen:");
       }
       
       
@@ -170,7 +209,9 @@ static String[][] spelaSpel() {
 
 static String[][] spelaMotDatorn(){
 
-   spelaresVal();
+   clearBoard();
+   gameEnded = false;
+   //spelaresVal();
 
    System.out.println("Nu spelar vi! Välj först rad och sedan kolumn:");
    
@@ -181,25 +222,25 @@ static String[][] spelaMotDatorn(){
    int vemsTur = rand.nextInt(2);
    System.out.println(vemsTur);
    String vad = null;
+   String name = null;
 
 
    while (!gameEnded){
 
       if (vemsTur == 0){
-
-        // System.out.println("Din tur spelare 1!");
-        vad = ett.getVal();
+         name = ett.getNamn();
+         vad = ett.getVal();
 
       }
-      else if (vemsTur == 1){
+      /*else if (vemsTur == 1){
          vad = two.getVal();
-      }
+      }*/
 
       
 
       while (vemsTur == 0) {
 
-         System.out.println("Your move (row[1-3] and column[1-3]): ");
+         System.out.println(name + "s tur: ");
          s.hasNextInt();
          row = s.nextInt() - 1;
          s.hasNextInt();
@@ -213,34 +254,43 @@ static String[][] spelaMotDatorn(){
       
          
             if (checkWin(vad)) {
-               System.out.println("You win!");
+               System.out.println(name + " vann!");
+               ett.addVinst(ett.getVinst() + 1);
                break;
             } 
             else if (isBoardFull(vad)) {
-               System.out.println("It's a draw!");
+               System.out.println("Det blev lika");
                break;
             }
          }
       
          else {
-            System.out.println("Invalid move. Try again.");
+            System.out.println("Otillåtet drag. Försök igen:");
          }
+
+         
          
       }
-      if (vemsTur == 1){
+
+      if (checkWin(vad) || isBoardFull(vad)){
+         gameEnded = true;
+      }
+      else if (vemsTur == 1){
            // AI move
+           name = two.getNamn();
            vad = two.getVal();
-           System.out.println("AI's move:");
+           System.out.println("Datorns drag:");
            makeAIMove(vad);
            printBoard();
            vemsTur = 0;
            
            if (checkWin(vad)) {
-            System.out.println("AI wins!");
+            System.out.println("Datorn vann!");
+            two.addVinst(two.getVinst() + 1);
             break;
          }
          else if (isBoardFull(vad)) {
-            System.out.println("It's a draw!");
+            System.out.println("Det blev lika");
             break;
          }
       }

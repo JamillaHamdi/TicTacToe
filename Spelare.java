@@ -1,6 +1,7 @@
 public class Spelare {
     public String namn;
     public String val;
+    public int vinst;
 
     public Spelare(){
         //this.namn = namn;
@@ -13,6 +14,14 @@ public class Spelare {
 
     public void setVal(String val){
         this.val = val;
+    }
+
+    public void addVinst(int vinst){
+        this.vinst = vinst;
+    }
+
+    public int getVinst() {
+        return vinst;
     }
 
     public String getNamn() {
