@@ -7,7 +7,7 @@ public class player1valjXellerOClass {
     public static String player2;
 
     public static Scanner scanner = new Scanner(System.in);
-    public static void player1ValjXellerOMetod(String[] args) throws InterruptedException {
+    public static void player1ValjXellerOMetod(String[] args) throws InterruptedException, IllegalAccessException {
 
         System.out.println("Spelare 1: [X/O] \n");   
 

@@ -1,18 +1,18 @@
 import java.lang.Thread;
 
 public class printBoardClass {
-    static String nr1 = " 1 ";
-    static String nr2 = " 2 ";
-    static String nr3 = " 3 ";
-    static String nr4 = " 4 ";
-    static String nr5 = " 5 ";
-    static String nr6 = " 6 ";
-    static String nr7 = " 7 ";
-    static String nr8 = " 8 ";
-    static String nr9 = " 9 ";
+    public static String nr1 = " 1 ";
+    public static String nr2 = " 2 ";
+    public static String nr3 = " 3 ";
+    public static String nr4 = " 4 ";
+    public static String nr5 = " 5 ";
+    public static String nr6 = " 6 ";
+    public static String nr7 = " 7 ";
+    public static String nr8 = " 8 ";
+    public static String nr9 = " 9 ";
 
 
-    static String board = "";
+    public static String board = "";
     public static void laddaOmBoard() {
         board =
 
@@ -40,10 +40,10 @@ public class printBoardClass {
             char character = board.charAt(b);
 
             System.out.print(character);
-            Thread.sleep(50);
+            Thread.sleep(1);
         }
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
     }
 
