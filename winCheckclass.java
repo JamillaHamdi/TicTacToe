@@ -81,7 +81,7 @@ public class winCheckclass {
                )
             {
             
-                System.out.println(printBoardClass.nr2 + " vinner!");
+                System.out.println(printBoardClass.nr7 + " vinner!");
                 win = true;
                 loopBreakMetod(args);
             }
@@ -100,6 +100,7 @@ public class winCheckclass {
                 draw = true;
                 loopBreakMetod(args);
                 
+                
 
             }
         
@@ -114,11 +115,14 @@ public class winCheckclass {
 
         while(win == false && draw == false){
 
+            if (win || draw){break;}
             player1LogicClass.player1LogicMetod(args);
          winCheckMetod(args);
          if (win || draw){break;}
 
+         
          player2LogicClass.player2LogicMetod(args);
+
          winCheckMetod(args);
          if (win || draw){break;}
 

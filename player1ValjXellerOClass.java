@@ -38,7 +38,7 @@ public class player1valjXellerOClass {
         Thread.sleep(800);
      
         System.out.println("\n" + "Spelare 1: "
-        + player1 + ", spelare 2: " + player2);
+        + player1.charAt(1) + ", spelare 2:" + player2);
         Thread.sleep(1000);
 
         System.out.println("Laddar..."); 

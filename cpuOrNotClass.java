@@ -12,9 +12,9 @@ public class cpuOrNotClass {
         String cpuVal = scanner.next();
 
         if (cpuVal.equalsIgnoreCase("N"))
-        {cpuOn = true;}
-        else if (cpuVal.equalsIgnoreCase("J"))
         {cpuOn = false;}
+        else if (cpuVal.equalsIgnoreCase("J"))
+        {cpuOn = true;}
         else 
         {System.out.println("Valet är mellan Ja (J) eller Nej (N) brotha \n" +
         "Försök tf igen"); 

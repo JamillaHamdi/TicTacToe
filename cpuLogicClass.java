@@ -1,8 +1,9 @@
 public class cpuLogicClass {
     public static void cpuLogicMetod(String[] args) {
 
-        System.out.println("this is the cpuLogicMetod");
-        
+        String cpu = player1valjXellerOClass.player1;
+        Double cpuVal = Math.floor(Math.random()*100);
+        System.out.println(cpuVal);
     }
     
 }
