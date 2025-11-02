@@ -8,9 +8,7 @@ public class player1LogicClass {
     public static void player1LogicMetod(String[] args)
     throws InterruptedException, IllegalAccessException{
 
-        System.out.println("Spelare 1 \n");
-        Thread.sleep(1000);
-        System.out.println("Välj ruta");
+        System.out.println("Spelare 1, välj ruta \n");
 
         String valdRuta = "nr" + p1RutaScanner.next();
 

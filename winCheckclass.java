@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class winCheckclass {
     
  public static boolean win;
@@ -5,6 +7,8 @@ public class winCheckclass {
 
     public static void winCheckMetod(String[] args) 
     throws InterruptedException, IllegalAccessException{
+     Scanner scanner = new Scanner(System.in);
+
 
 
             if (
@@ -30,6 +34,21 @@ public class winCheckclass {
                 System.out.println(printBoardClass.nr1 + " vinner!");
                 win = true;
                 loopBreakMetod(args);
+                System.out.println("Vill du spela igen? \n [J/N]");
+                String spelaIgenScanner = scanner.next();
+                if (spelaIgenScanner.equalsIgnoreCase("J"))
+                {
+                     printBoardClass.nr1 = " 1 ";
+                     printBoardClass.nr2 = " 2 ";
+                     printBoardClass.nr3 = " 3 ";
+                     printBoardClass.nr4 = " 4 ";
+                     printBoardClass.nr5 = " 5 ";
+                     printBoardClass.nr6 = " 6 ";
+                     printBoardClass.nr7 = " 7 ";
+                     printBoardClass.nr8 = " 8 ";
+                     printBoardClass.nr9 = " 9 ";
+                    Main.main(args);
+                }
             }
             else if (
                 printBoardClass.nr2 == printBoardClass.nr5

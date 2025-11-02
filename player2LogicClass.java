@@ -11,10 +11,8 @@ public class player2LogicClass {
     throws InterruptedException, IllegalAccessException{
 
         if (!cpuOrNotClass.cpuOn) {
-            System.out.println("Spelare 2 \n");
-            Thread.sleep(1000);
-            System.out.println("Välj ruta");
-            // read raw input (e.g. "1") and form field name "nr10", "nr20", ...
+        System.out.println("Spelare 2, välj ruta \n");
+
             String val = p2RutaScanner.next();
             valdRuta = "nr" + val;
         } else {
@@ -51,9 +49,9 @@ public class player2LogicClass {
                     f.set(null,player1valjXellerOClass.player2); 
                     printBoardClass.laddaOmBoard();
                     System.out.println(cpuOrNotClass.cpuOn == true ? "CPU:ns tur" : ""); 
-                    if (cpuOrNotClass.cpuOn == true) {Thread.sleep(2000);}
+                    if (cpuOrNotClass.cpuOn == true) {Thread.sleep(1000);}
                     System.out.println(cpuOrNotClass.cpuOn == true ? "CPU:n har valt ruta " + valdRuta : "Ruta uppdaterad");
-                    if (cpuOrNotClass.cpuOn == true) {Thread.sleep(2000);}
+                    if (cpuOrNotClass.cpuOn == true) {Thread.sleep(1000);}
                     printBoardClass.printBoardMetod(args);
             }
 

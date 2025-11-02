@@ -31,7 +31,7 @@ public class player1valjXellerOClass {
             System.out.println("Startar om... \n");
             Thread.sleep(2000);
 
-            Main.main(args);
+            player1ValjXellerOMetod(args);
         }
 
         
@@ -45,16 +45,16 @@ public class player1valjXellerOClass {
         Thread.sleep(2000);
 
         System.out.println("\n" + "Spelet börjar om...");
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         System.out.println("3");
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         System.out.println("2");
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         System.out.println("1");
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         
 
