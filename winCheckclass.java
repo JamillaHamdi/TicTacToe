@@ -37,7 +37,9 @@ public class winCheckclass {
                 System.out.println("Vill du spela igen? \n [J/N]");
                 String spelaIgenScanner = scanner.next();
                 if (spelaIgenScanner.equalsIgnoreCase("J"))
-                {
+                {   
+                     win = false;
+                     draw = false;
                      printBoardClass.nr1 = " 1 ";
                      printBoardClass.nr2 = " 2 ";
                      printBoardClass.nr3 = " 3 ";
@@ -61,6 +63,22 @@ public class winCheckclass {
                 System.out.println(printBoardClass.nr2 + " vinner!");
                 win = true;
                 loopBreakMetod(args);
+                System.out.println("Vill du spela igen? \n [J/N]");
+                String spelaIgenScanner = scanner.next();
+                if (spelaIgenScanner.equalsIgnoreCase("J"))
+                {   
+                     win = false;
+                     draw = false;
+                     printBoardClass.nr1 = " 1 ";
+                     printBoardClass.nr2 = " 2 ";
+                     printBoardClass.nr3 = " 3 ";
+                     printBoardClass.nr4 = " 4 ";
+                     printBoardClass.nr5 = " 5 ";
+                     printBoardClass.nr6 = " 6 ";
+                     printBoardClass.nr7 = " 7 ";
+                     printBoardClass.nr8 = " 8 ";
+                     printBoardClass.nr9 = " 9 ";
+                    Main.main(args);}
             }
             else if (
                 printBoardClass.nr3 == printBoardClass.nr6
@@ -79,6 +97,23 @@ public class winCheckclass {
                 System.out.println(printBoardClass.nr3 + " vinner!");
                 win = true;
                 loopBreakMetod(args);
+                System.out.println("Vill du spela igen? \n [J/N]");
+                String spelaIgenScanner = scanner.next();
+
+                if (spelaIgenScanner.equalsIgnoreCase("J"))
+                {   
+                     win = false;
+                     draw = false;
+                     printBoardClass.nr1 = " 1 ";
+                     printBoardClass.nr2 = " 2 ";
+                     printBoardClass.nr3 = " 3 ";
+                     printBoardClass.nr4 = " 4 ";
+                     printBoardClass.nr5 = " 5 ";
+                     printBoardClass.nr6 = " 6 ";
+                     printBoardClass.nr7 = " 7 ";
+                     printBoardClass.nr8 = " 8 ";
+                     printBoardClass.nr9 = " 9 ";
+                    Main.main(args);}
             }
             else if (
                 printBoardClass.nr4 == printBoardClass.nr5
@@ -91,6 +126,23 @@ public class winCheckclass {
                 System.out.println(printBoardClass.nr4 + " vinner!");
                 win = true;
                 loopBreakMetod(args);
+                System.out.println("Vill du spela igen? \n [J/N]");
+                String spelaIgenScanner = scanner.next();
+
+                if (spelaIgenScanner.equalsIgnoreCase("J"))
+                {   
+                     win = false;
+                     draw = false;
+                     printBoardClass.nr1 = " 1 ";
+                     printBoardClass.nr2 = " 2 ";
+                     printBoardClass.nr3 = " 3 ";
+                     printBoardClass.nr4 = " 4 ";
+                     printBoardClass.nr5 = " 5 ";
+                     printBoardClass.nr6 = " 6 ";
+                     printBoardClass.nr7 = " 7 ";
+                     printBoardClass.nr8 = " 8 ";
+                     printBoardClass.nr9 = " 9 ";
+                    Main.main(args);}
             }
             else if (
                 printBoardClass.nr7 == printBoardClass.nr8
@@ -103,6 +155,23 @@ public class winCheckclass {
                 System.out.println(printBoardClass.nr7 + " vinner!");
                 win = true;
                 loopBreakMetod(args);
+                System.out.println("Vill du spela igen? \n [J/N]");
+                String spelaIgenScanner = scanner.next();
+
+                if (spelaIgenScanner.equalsIgnoreCase("J"))
+                {   
+                     win = false;
+                     draw = false;
+                     printBoardClass.nr1 = " 1 ";
+                     printBoardClass.nr2 = " 2 ";
+                     printBoardClass.nr3 = " 3 ";
+                     printBoardClass.nr4 = " 4 ";
+                     printBoardClass.nr5 = " 5 ";
+                     printBoardClass.nr6 = " 6 ";
+                     printBoardClass.nr7 = " 7 ";
+                     printBoardClass.nr8 = " 8 ";
+                     printBoardClass.nr9 = " 9 ";
+                    Main.main(args);}
             }
             else if (printBoardClass.nr1 != " 1 " &&
                      printBoardClass.nr2 != " 2 " &&
@@ -118,6 +187,23 @@ public class winCheckclass {
                 System.out.println("Det blir oavgjort!");
                 draw = true;
                 loopBreakMetod(args);
+                System.out.println("Vill du spela igen? \n [J/N]");
+                String spelaIgenScanner = scanner.next();
+                
+                if (spelaIgenScanner.equalsIgnoreCase("J"))
+                {   
+                     win = false;
+                     draw = false;
+                     printBoardClass.nr1 = " 1 ";
+                     printBoardClass.nr2 = " 2 ";
+                     printBoardClass.nr3 = " 3 ";
+                     printBoardClass.nr4 = " 4 ";
+                     printBoardClass.nr5 = " 5 ";
+                     printBoardClass.nr6 = " 6 ";
+                     printBoardClass.nr7 = " 7 ";
+                     printBoardClass.nr8 = " 8 ";
+                     printBoardClass.nr9 = " 9 ";
+                    Main.main(args);}
                 
                 
 
