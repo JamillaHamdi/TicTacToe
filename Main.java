@@ -12,7 +12,7 @@ public class Main {
         winCheckclass.loopBreakMetod(args);
         }
         else {
-
+            
             player1valjXellerOClass.player1ValjXellerOMetod(args);
             printBoardClass.printBoardMetod(args);
             winCheckclass.loopBreakMetod(args);

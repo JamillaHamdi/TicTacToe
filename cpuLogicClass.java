@@ -1,9 +1,3 @@
-public class cpuLogicClass {
-    public static void cpuLogicMetod(String[] args) {
-
-        String cpu = player1valjXellerOClass.player1;
-        Double cpuVal = Math.floor(Math.random()*100);
-        System.out.println(cpuVal);
-    }
-    
-}
+//Vi skulle ha en separat klass för CPU logic men vi bestämde oss 
+//för att lägga in det i player2 logic med en if sats för if (cpuOn == true)
+//Den här filen är irrelevant.
