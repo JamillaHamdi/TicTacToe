@@ -27,6 +27,7 @@ public class Ttt {
       //spelaresVal();
       //printBoard();
       spelaSpel();
+      s.close();
 
     }
 
@@ -59,12 +60,6 @@ static void spelaresVal (){
 
 static String[][] printBoard() {
    
-
-   /*char[][] board = {
-      {'1', '2', '3'},
-      {'4', '5', '6'},
-      {'7', '8', '9'}
-   };*/
 
    System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
