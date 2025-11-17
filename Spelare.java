@@ -4,8 +4,7 @@ public class Spelare {
     public int vinst;
 
     public Spelare(){
-        //this.namn = namn;
-        //this.val = val;
+    
     }
     
     public void setNamn(String namn){

@@ -26,7 +26,6 @@ public class TicTacToeJamilla {
       
 
       while (antal != 1 && antal !=2){
-         //s.hasNextInt();
          try {
             antal = s.nextInt();
             if (antal != 1 && antal !=2){
@@ -35,7 +34,6 @@ public class TicTacToeJamilla {
          }
          catch(InputMismatchException e){
             System.out.println("Du måste välja 1 eller 2. Försök igen:");
-            //s.reset();
             s.next();
          }
       }
@@ -55,7 +53,6 @@ public class TicTacToeJamilla {
          int igen = 0;
 
          while (igen != 1 && igen != 2){
-            //s.hasNextInt();
             try {
                igen = s.nextInt();
                if (igen != 1 && igen!= 2){
@@ -83,12 +80,13 @@ static Spelare[] spelaresVal() {
    String valEtt = null;
    String valTwo = null; 
    boolean right = true;
-   
-   while (right) {
-      System.out.println("Okej! Spelare 1, vad heter du och vill du vara x eler o?");
+
+   System.out.println("Okej! Spelare 1, vad heter du och vill du vara x eler o?");
       System.out.println("Namn:");
       s.hasNext();
       namnEtt = s.next();
+   
+   while (right) {
       System.out.println("x/o:");
       s.hasNext();
       valEtt = s.next().toLowerCase();
@@ -102,7 +100,7 @@ static Spelare[] spelaresVal() {
          right = false;
       }
       else {
-      System.out.println("Mannen välj rätt");
+      System.out.println("Välj rätt!");
       }
    }
    
@@ -126,9 +124,6 @@ static Spelare[] spelaresVal() {
    System.out.println(ett.getNamn() + " valde " + ett.getVal() + ". " + two.getNamn() + " blir då " + two.getVal());
 
    Spelare[] Spelare = {ett, two};
-   //Spelare = new Spelare[2];
-   //Spelare[0] = ett;
-   //Spelare[1] = two;
 
    return Spelare;
    
@@ -162,7 +157,6 @@ static String[][] clearBoard(){
 static String[][] spelaSpel() {
 
    clearBoard();
-   //spelaresVal();
 
    System.out.println("Nu spelar vi! Välj först rad och sedan kolumn:");
    
@@ -171,7 +165,6 @@ static String[][] spelaSpel() {
    Random rand = new Random();
 
    int vemsTur = rand.nextInt(2);
-   System.out.println(vemsTur);
    String vad = null;
    String name = null;
 
@@ -201,9 +194,6 @@ static String[][] spelaSpel() {
             System.out.println("Du kan bara välja siffror 1-3. Försök igen:");
             s.next();
          }
-         /*if (row >= 0 && row < 3 && col >= 0 && col < 3){
-            fel = false;
-         }*/
       }
       
       if (isValidMove(row, col)) {
@@ -246,7 +236,6 @@ static String[][] spelaMotDatorn(){
 
    clearBoard();
    gameEnded = false;
-   //spelaresVal();
 
    System.out.println("Nu spelar vi! Välj först rad och sedan kolumn:");
    
@@ -255,7 +244,6 @@ static String[][] spelaMotDatorn(){
    Random rand = new Random();
 
    int vemsTur = rand.nextInt(2);
-   System.out.println(vemsTur);
    String vad = null;
    String name = null;
 
@@ -267,9 +255,6 @@ static String[][] spelaMotDatorn(){
          vad = ett.getVal();
 
       }
-      /*else if (vemsTur == 1){
-         vad = two.getVal();
-      }*/
 
       
 
